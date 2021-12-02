@@ -1,16 +1,28 @@
+import java.util.Hashtable;
+import java.util.Scanner;
+
 public class ComboLock {
     public static void main(String[] args) {
-        private int digit_1;
-        private int digit_2;
-        private int digit_3;
-        System.out.println("Test");
+        setCombo();
     }
 
-    private static void setCombo(int digit_1 int digit_2 int digit_3) { }
+    private static Hashtable<String, Integer> setCombo() {
+        Scanner scan = new Scanner(System.in);
+        Hashtable<String, Integer> dict = new Hashtable<String, Integer>();
 
-    private static void unlock(int digit_1 int digit_2 int digit_3) { }
+        for (int i = 1; i < 4; i++) {
+            System.out.println("Enter digit " + i + " (0-36 only): ");
+            int digit = scan.nextInt();
+            dict.put("d" + i , digit);
+        }
 
-    private static void resetCombo(int digit_1 int digit_2 int digit_3) { }
+        scan.close();
+        return(dict);
+    }
+
+    private static void unlock() { }
+
+    private static void resetCombo() { }
 
     private static void exit() {
         System.out.println("Terminated");
