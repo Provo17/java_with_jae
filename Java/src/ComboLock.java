@@ -1,12 +1,14 @@
+import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Scanner;
 
 public class ComboLock {
     public static void main(String[] args) {
-        setCombo();
+//        setCombo();
+        unlock();
     }
 
-    private static Hashtable<String, Integer> setCombo() {
+    public static Collection<Integer> setCombo() {
         Scanner scan = new Scanner(System.in);
         Hashtable<String, Integer> dict = new Hashtable<String, Integer>();
 
@@ -17,10 +19,14 @@ public class ComboLock {
         }
 
         scan.close();
-        return(dict);
+        return dict.values();
     }
 
-    private static void unlock() { }
+
+    private static void unlock() {
+       Collection<Integer> values = (Collection<Integer>) setCombo();
+       System.out.println(values);
+    }
 
     private static void resetCombo() { }
 
